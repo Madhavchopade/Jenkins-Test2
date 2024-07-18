@@ -52,33 +52,23 @@
         </dependency>
     </dependencies>
     
-    <build>
-        <plugins>
-            <!-- Maven WAR plugin configuration -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version>
-                <configuration>
-                    <!-- Configure if needed -->
-                </configuration>
-            </plugin>
-            
-            <!-- Spring Boot Maven plugin configuration -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.3.1</version>
-                <configuration>
-                    <excludes>
-                        <!-- Exclude Lombok from packaging -->
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    
+   <build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>3.3.1</version>
+            <configuration>
+                <mainClass>com.demo.jenkins.JenkinsApplication</mainClass> <!-- Replace with your main application class -->
+                <excludes>
+                    <exclude>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclude>
+                </excludes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 </project>
